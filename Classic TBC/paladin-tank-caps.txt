@@ -1,1 +1,1 @@
-/run c,t,e=GetCombatRatingBonus,GetTalentInfo,GetExpertisePercent();_,_,_,_,d=t(2,9);_,_,_,_,h=t(2,3);print(format("Tank Caps\nAnti-Crit: %.2f/5.6%%\nHit: %.2f/9%%\nD: %.2f/6.5%%\nP: %.2f/14%%",floor(d*4+c(2))*.04+c(15),c(6)+h,e,e))
+/run c,t,e=GetCombatRatingBonus,GetTalentInfo,GetExpertisePercent();_,_,_,_,d=t(2,9);_,_,_,_,h=t(2,3);print(format("TankCaps\nAntiCrit: %.2f/5.6%%\nMHit: %.2f/9%%\nSHit: %.2f/16%%\nD: %.2f/6.5%%\nP: %.2f/14%%",floor(d*4+c(2))*.04+c(15),c(6)+h,c(8)+h,e,e))
