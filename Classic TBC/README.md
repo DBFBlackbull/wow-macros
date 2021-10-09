@@ -13,7 +13,7 @@ Macros does NOT take Draenei racial buffs into account.
 
 ## Warrior
 ### Tank Caps
-![warrior Tank Caps](/Classic%20TBC/img/warrior-tank-caps.png?raw=true)
+![warrior Tank Caps](/Classic%20TBC/img/warrior-tank-caps2.png?raw=true)
 
 Reads the following talents:
 * Anticipation (Protection) for defense skill https://tbc.wowhead.com/spell=12753/anticipation
