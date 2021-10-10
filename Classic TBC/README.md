@@ -14,6 +14,7 @@ Macros does NOT take Draenei racial buffs into account.
 ## Warrior
 ### Tank Caps
 ![Warrior Tank Caps](/Classic%20TBC/img/warrior-tank-caps2.png?raw=true)
+
 Anti-Crit sums both Defense and Resilience into one, for easier readability
 
 Reads the following talents:
@@ -30,6 +31,7 @@ Reads the following talents:
 ## Paladin
 ### Tank Caps
 ![Paladin Avoidance](/Classic%20TBC/img/paladin-tank-caps.png?raw=true)
+
 Anti-Crit sums both Defense and Resilience into one, for easier readability
 
 Reads the following talents:
