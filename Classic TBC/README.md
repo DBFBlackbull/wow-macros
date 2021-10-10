@@ -13,7 +13,7 @@ Macros does NOT take Draenei racial buffs into account.
 
 ## Warrior
 ### Tank Caps
-![warrior Tank Caps](/Classic%20TBC/img/warrior-tank-caps2.png?raw=true)
+![Warrior Tank Caps](/Classic%20TBC/img/warrior-tank-caps2.png?raw=true)
 
 Reads the following talents:
 * Anticipation (Protection) for defense skill https://tbc.wowhead.com/spell=12753/anticipation
@@ -21,17 +21,21 @@ Reads the following talents:
 * Precision (Fury) for hit chance https://tbc.wowhead.com/spell=29592/precision
 
 ### Avoidance
-![warrior Tank Caps](/Classic%20TBC/img/warrior-avoidance.png?raw=true)
+![Warrior Avoidance](/Classic%20TBC/img/warrior-avoidance.png?raw=true)
 
 Reads the following talents:
 * Anticipation (Protection) for defense skill https://tbc.wowhead.com/spell=12753/anticipation
 
 ## Paladin
 ### Tank Caps
+![Paladin Avoidance](/Classic%20TBC/img/paladin-tank-caps.png?raw=true)
+
 Reads the following talents:
 * Anticipation (Protection) https://tbc.wowhead.com/spell=20100/anticipation
 * Precision (Protection) https://tbc.wowhead.com/spell=20193/precision
 
 ### Avoidance
+![Paladin Avoidance](/Classic%20TBC/img/warrior-avoidance.png?raw=true)
+
 Reads the following talents:
 * Anticipation (Protection) https://tbc.wowhead.com/spell=20100/anticipation
