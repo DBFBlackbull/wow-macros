@@ -23,7 +23,10 @@ Start auto attack and try to use Whirlwind
 ```
 /script if not IsCurrentAction(40) then UseAction(40);end; CastSpellByName("Whirlwind");
 ```
-
+Start auto attack and try to use Revenge and Sunder Armor
+```
+/script if not IsCurrentAction(40) then UseAction(40); end; CastSpellByName("Revenge");  CastSpellByName("Sunder Armor");
+```
 ## Combining abilities
 Use Bloodrage and top trinket slot
 ```
