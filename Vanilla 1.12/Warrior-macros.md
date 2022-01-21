@@ -46,3 +46,7 @@ If you are in combat and have 20 rage or more, switch to Defensive Stance and us
 ```
 
 ## Advanced stuff
+For these macros, you first need run this helper macro that links out the "magic numbers" for the macros. Everytime you learn a new spell / proficiency you need to run this helper macro again and update all the "magic numbers" in the macros below
+```
+/run local i = 1; while true do local spellName, spellRank = GetSpellName(i,0); if not spellName then do break end; end; DEFAULT_CHAT_FRAME:AddMessage( spellName .. '(' .. spellRank .. ')' .. ' ' .. i );  i = i + 1; end;
+```
