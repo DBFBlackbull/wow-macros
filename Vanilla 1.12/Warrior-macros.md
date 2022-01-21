@@ -50,3 +50,11 @@ For these macros, you first need run this helper macro that links out the "magic
 ```
 /run local i = 1; while true do local spellName, spellRank = GetSpellName(i,0); if not spellName then do break end; end; DEFAULT_CHAT_FRAME:AddMessage( spellName .. '(' .. spellRank .. ')' .. ' ' .. i );  i = i + 1; end;
 ```
+
+
+If you are **in combat** or **Charge is on cooldown** then cast Intercept, then if you have a shield eqipped, go in Defensive Stance.
+If you are **out of combat** and **Charge is ready** then cast Battle Stance
+- Magic Number `19` must match with `Charge` from the helper macro above.
+```
+/run local c=UnitAffectingCombat("player");_,d=GetSpellCooldown(19,"spell");if c or d>2 then CastSpellByName("Intercept");if IsEquippedAction(30) then CastSpellByName("Defensive Stance");end;else CastSpellByName("Battle Stance");end;
+```
