@@ -2,7 +2,7 @@
 Many macros uses a magic number for actions, ie. `IsCurrentAction(40)` or `UseAction(40)`. In order to figure out where that number is on your UI use the following picture
 
 ![WoW Actionbar Slotnumbers](https://github.com/DBFBlackbull/wow-macros/raw/master/img/wow-actionsbar-slotnumbers.jpg)
-![WoW Bags Slotnumbers](https://github.com/DBFBlackbull/wow-macros/raw/master/img/wow-bag-slots.png)
+![WoW Bags Slotnumbers](https://github.com/DBFBlackbull/wow-macros/raw/master/img/wow-bag-slots-v1.png)
 
 ## Basics
 Whenever you see the following code:
