@@ -69,10 +69,15 @@ If you are **out of combat** and **Charge is off cooldown** then cast Battle Sta
 #### Equip Shield + Shield Bash + Equip Off hand
 This macro is only for fury warriors / warriors dual wielding weapons. It does the following
 If **Shield Bash is off cooldown** and you have **10 or more range** then it equips your 1 hander + shield and casts Shield Bash. Afterwards its reequips your off hand weapon
+You will need this image for bag number references:
+
+![WoW Bags Slotnumbers](https://github.com/DBFBlackbull/wow-macros/raw/master/img/wow-bag-slots.png)
+
 **Requirements**
 - Number `46` must match the number for `Shield Bash`
 - Actionbar slot `41` must have your main hand weapon
 - Actionbar slot `30` must have your shield
+- Your shield must be located in `Bag 4` in `Slot 3`
 ```
 /run local u,p=UseAction,"player";_,d=GetSpellCooldown(46,"spell");if d<2 and UnitMana(p)>9 and UnitAffectingCombat(p) then u(41);u(30);CastSpellByName("Shield Bash");elseif IsEquippedAction(30) then PickupContainerItem(4,3);EquipCursorItem(17);end;
 ```
