@@ -11,6 +11,8 @@ if not IsCurrentAction(40) then UseAction(40);end;
 All you have to think is `/startattack`. By placing my auto attack "spell" on slot 40, the above code ensures that my auto attack starts. You can change what slot you want it on and just change the number `40` to the slot you picked
 
 ## Auto attack + Ability
+All these macros have the **requirement** that `Autoattack` must be on actionbar slot `40`
+
 Start auto attack and try to use Heroic Strike
 ```
 /script if not IsCurrentAction(40) then UseAction(40);end; CastSpellByName("Heroic Strike");
@@ -32,7 +34,9 @@ Use Bloodrage and top trinket slot
 ```
 /script CastSpellByName("Bloodrage"); UseInventoryItem(13);
 ```
-Use Start auto attack, use Charge. If you are in combat and have a shield on, switch to Defensive Stance (Shield must be on slot 30)
+Use Start auto attack, use Charge. If you are in combat and have a shield on, switch to Defensive Stance
+**Requirement:**
+- `Shield` must be on actionbar slot `30`
 ```
 /run local inCombat=UnitAffectingCombat("player");if not IsCurrentAction(40) then UseAction(40);end; CastSpellByName("Charge"); if inCombat and IsEquippedAction(30) then CastSpellByName("Defensive Stance");end;
 ```
@@ -54,7 +58,9 @@ For these macros, you first need run this helper macro that links out the "magic
 
 If you are **in combat** or **Charge is on cooldown** then cast Intercept, then if you have a shield eqipped, go in Defensive Stance.
 If you are **out of combat** and **Charge is ready** then cast Battle Stance
-- Magic Number `19` must match with `Charge` from the helper macro above.
+**Requirements**
+- Number `19` must match the number for `Charge`
+- `Shield` must be on actionbar slot `30`
 ```
 /run local c=UnitAffectingCombat("player");_,d=GetSpellCooldown(19,"spell");if c or d>2 then CastSpellByName("Intercept");if IsEquippedAction(30) then CastSpellByName("Defensive Stance");end;else CastSpellByName("Battle Stance");end;
 ```
