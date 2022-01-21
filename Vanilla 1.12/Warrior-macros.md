@@ -2,6 +2,7 @@
 Many macros uses a magic number for actions, ie. `IsCurrentAction(40)` or `UseAction(40)`. In order to figure out where that number is on your UI use the following picture
 
 ![WoW Actionbar Slotnumbers](https://github.com/DBFBlackbull/wow-macros/raw/master/img/wow-actionsbar-slotnumbers.jpg)
+![WoW Bags Slotnumbers](https://github.com/DBFBlackbull/wow-macros/raw/master/img/wow-bag-slots.png)
 
 ## Basics
 Whenever you see the following code:
@@ -69,10 +70,6 @@ If you are **out of combat** and **Charge is off cooldown** then cast Battle Sta
 #### Equip Shield + Shield Bash + Equip Off hand
 This macro is only for fury warriors / warriors dual wielding weapons. It does the following
 If **Shield Bash is off cooldown** and you have **10 or more range** then it equips your 1 hander + shield and casts Shield Bash. Afterwards its reequips your off hand weapon
-You will need this image for bag number references:
-
-![WoW Bags Slotnumbers](https://github.com/DBFBlackbull/wow-macros/raw/master/img/wow-bag-slots.png)
-
 **Requirements**
 - Number `46` must match the number for `Shield Bash`
 - Actionbar slot `41` must have your main hand weapon
