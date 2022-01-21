@@ -82,3 +82,11 @@ You will need this image for bag number references:
 /run local u,p=UseAction,"player";_,d=GetSpellCooldown(46,"spell");if d<2 and UnitMana(p)>9 and UnitAffectingCombat(p) then u(41);u(30);CastSpellByName("Shield Bash");elseif IsEquippedAction(30) then PickupContainerItem(4,3);EquipCursorItem(17);end;
 ```
 **Note:** This macro worked extremely well on Elysium private server as they, for some reason, did not have a Global Cooldown when dual wielding and equipping a shield in combat! Depending on what private server you are playing on and how it is coded, results may vary
+#### Switch between dual Wield and 2 Hander
+**Requirements**
+- Your Main hand / 2 Hander must be in `Bag 4` in `Slot 1`
+- Your off hand / an empty slot must be in `Bag 4` om `Slot 2`
+```
+/run local i,c,e=PickupInventoryItem,PickupContainerItem,EquipCursorItem;i(17);if CursorHasItem()then c(4,2);end; c(4,1);e(16);c(4,2);e(17);
+```
+**Note:** I am pretty sure this macro only works outside of combat as switching weapons in combat triggers a Global Cooldown
