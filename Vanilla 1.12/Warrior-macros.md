@@ -1,7 +1,17 @@
 # Macros for World of Warcraft Vanilla 1.12
-Many macros uses a magic number for actions, ie. `IsCurrentAction(40)` or `UseAction(40)`. In order to figure out where that number is on your UI use the following picture
+Many macros uses a magic number for actions, ie. 
+- `IsCurrentAction(40)`
+- `UseAction(40)`
+- `PickupInventoryItem(16)`
+- `EquipCursorItem(17)`
+
+In order to figure out where that number is on your UI use the following picture
 
 ![WoW Actionbar Slotnumbers](https://github.com/DBFBlackbull/wow-macros/raw/master/img/wow-actionsbar-slotnumbers.jpg)
+
+Other macros that work with the backpack uses magic numbers like this: `PickupContainerItem(4,3)`.
+Here the first number `4` is the bag / container to look for, where the bag furthest to the left is container `4` and the starting backpack that the character starts with is container `0`. The next number is the slot inside that bag that the macro is trying to pick up. All the numbers are here:
+
 ![WoW Bags Slotnumbers](https://github.com/DBFBlackbull/wow-macros/raw/master/img/wow-bag-slots-v1.png)
 
 ## Basics
@@ -9,7 +19,7 @@ Whenever you see the following code:
 ```
 if not IsCurrentAction(40) then UseAction(40);end;
 ```
-All you have to think is `/startattack`. By placing my auto attack "spell" on slot 40, the above code ensures that my auto attack starts. You can change what slot you want it on and just change the number `40` to the slot you picked
+All you have to think is `/startattack`. By placing my auto attack "spell" on actionbar slot `40`, the above code ensures that my auto attack starts. You can change what slot you want it on and just change the number `40` to the slot you picked
 
 ## Auto attack + Ability
 All these macros have the **requirement** that `Autoattack` must be on actionbar slot `40`
@@ -35,19 +45,19 @@ All these macros have the **requirement** that `Autoattack` must be on actionbar
 ```
 /script CastSpellByName("Bloodrage"); UseInventoryItem(13);
 ```
-#### Use Start auto attack, use Charge. If you are in combat and have a shield on, switch to Defensive Stance
+#### Start auto attack, use Charge. If you are in combat and have a shield on, switch to Defensive Stance
 **Requirement:**
-- `Shield` must be on actionbar slot `30`
+- `IsEquippedAction(30)`: Shield must be on actionbar slot `30`
 ```
 /run local inCombat=UnitAffectingCombat("player");if not IsCurrentAction(40) then UseAction(40);end; CastSpellByName("Charge"); if inCombat and IsEquippedAction(30) then CastSpellByName("Defensive Stance");end;
 ```
 #### Battle Stance + Overpower
-If you are not in Battle Stance, switch to Battle Stance. Then use Overpower
+If you are **not in Battle Stance**, switch to Battle Stance. Then use Overpower
 ```
 /run local _,_,inBattle=GetShapeshiftFormInfo(1); if inBattle then CastSpellByName("Overpower"); else CastSpellByName("Battle Stance"); end;
 ```
 #### Defensive Stance + Disarm
-If you are in combat and have 20 rage or more, switch to Defensive Stance and use Disarm
+If you are **in combat** and have **20 or more rage**, switch to Defensive Stance and use Disarm
 ```
 /run local _,_,inDefensive=GetShapeshiftFormInfo(2); if inDefensive then CastSpellByName("Disarm"); elseif (UnitMana("player")>19 and UnitAffectingCombat("player")) then CastSpellByName("Defensive Stance"); end;
 ```
@@ -60,29 +70,30 @@ For these macros, you first need run this helper macro that links out the "magic
 ```
 #### Intercept + Defensive Stance / Battle Stance
 If you are **in combat** or **Charge is on cooldown** then cast Intercept, then if you have a shield eqipped, go in Defensive Stance.
+
 If you are **out of combat** and **Charge is off cooldown** then cast Battle Stance
 **Requirements**
-- Number `19` must match the number for `Charge`
-- `Shield` must be on actionbar slot `30`
+- `GetSpellCooldown(19,"spell")`: The number `19` must match the number for `Charge`
+- `IsEquippedAction(30)`: Shield must be on actionbar slot `30`
 ```
 /run local c=UnitAffectingCombat("player");_,d=GetSpellCooldown(19,"spell");if c or d>2 then CastSpellByName("Intercept");if IsEquippedAction(30) then CastSpellByName("Defensive Stance");end;else CastSpellByName("Battle Stance");end;
 ```
 #### Equip Shield + Shield Bash + Equip Off hand
 This macro is only for fury warriors / warriors dual wielding weapons. It does the following
-If **Shield Bash is off cooldown** and you have **10 or more range** then it equips your 1 hander + shield and casts Shield Bash. Afterwards its reequips your off hand weapon
+If **Shield Bash is off cooldown** and you have **10 or more range** then it equips your 1 hander + shield and casts Shield Bash. Afterwards its re-equips your off hand weapon
 **Requirements**
-- Number `46` must match the number for `Shield Bash`
-- Actionbar slot `41` must have your main hand weapon
-- Actionbar slot `30` must have your shield
-- Your shield must be located in `Bag 4` in `Slot 3`
+- `GetSpellCooldown(46,"spell")`: Number `46` must match the number for `Shield Bash`
+- `u(41)`: Actionbar slot `41` must have your main hand weapon
+- `u(30) / IsEquippedAction(30)`: Actionbar slot `30` must have your shield
+- `PickupContainerItem(4,3)`: Your shield must be located in `Bag 4` in `Slot 3`
 ```
 /run local u,p=UseAction,"player";_,d=GetSpellCooldown(46,"spell");if d<2 and UnitMana(p)>9 and UnitAffectingCombat(p) then u(41);u(30);CastSpellByName("Shield Bash");elseif IsEquippedAction(30) then PickupContainerItem(4,3);EquipCursorItem(17);end;
 ```
 **Note:** This macro worked extremely well on Elysium private server as they, for some reason, did not have a Global Cooldown when dual wielding and equipping a shield in combat! Depending on what private server you are playing on and how it is coded, results may vary
 #### Switch between dual Wield and 2 Hander
 **Requirements**
-- Your Main hand / 2 Hander must be in `Bag 4` in `Slot 1`
-- Your off hand / an empty slot must be in `Bag 4` om `Slot 2`
+- `c(4,1)`: Your Main hand / 2 Hander must be in `Bag 4` in `Slot 1`
+- `c(4,2)`: Your off hand / an empty slot must be in `Bag 4` om `Slot 2`
 ```
 /run local i,c,e=PickupInventoryItem,PickupContainerItem,EquipCursorItem;i(17);if CursorHasItem()then c(4,2);end; c(4,1);e(16);c(4,2);e(17);
 ```
