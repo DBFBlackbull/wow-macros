@@ -1,1 +1,2 @@
-AuraUtil.FindAuraByName(spellName, unit, filter)
+AuraUtil.FindAuraByName(spellName, unit, filter) - https://www.wowinterface.com/forums/showthread.php?t=56332
+Added on the 2/7/2018 (Legion Expansion)
