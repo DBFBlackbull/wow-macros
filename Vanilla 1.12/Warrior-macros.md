@@ -87,6 +87,10 @@ For these macros, you first need run this helper macro that links out the "magic
 ```
 /run local i = 1; while true do local spellName, spellRank = GetSpellName(i,0); if not spellName then do break end; end; DEFAULT_CHAT_FRAME:AddMessage( spellName .. '(' .. spellRank .. ')' .. ' ' .. i );  i = i + 1; end;
 ```
+### Helper Macro + Icon textures
+```
+/run local i = 1; while true do local n,r = GetSpellName(i,0); t=GetSpellTexture(i,0); if not n then do break end; end; DEFAULT_CHAT_FRAME:AddMessage(n..'('..r..') '..t..' '.. i );  i = i + 1; end;
+```
 ### Intercept + Defensive Stance / Battle Stance
 If you are **in combat** or **Charge is on cooldown** then cast Intercept, then if you have a shield eqipped, go in Defensive Stance.
 
