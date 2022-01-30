@@ -16,8 +16,8 @@ These are some general macros that should work for all versions of WoW
 Here is some output of various values for quick references
 | Input     | \| | Boolean | Output    | 
 | ------    | -- | ------- | ------    |
-| `true`    | \| | true    | `true`    |
-| `false`   | \| | false   | `false`   |
+| `true`    | \| | true    | *Nothing* |
+| `false`   | \| | false   | *Nothing* |
 | `"true"`  | \| | true    | `true`    |
 | `"false"` | \| | true    | `false`   |
 | `1`       | \| | true    | `1`       |
@@ -26,3 +26,4 @@ Here is some output of various values for quick references
 | `"0"`     | \| | true    | `0`       |
 | `nil`     | \| | false   | *Nothing* |
 | `"nil"`   | \| | true    | `nil`     |
+| `""`      | \| | true    | *Nothing* |
