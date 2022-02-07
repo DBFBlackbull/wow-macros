@@ -19,8 +19,8 @@ Macros does NOT take Draenei racial buffs into account.
 |  72   | 6%    |   5%      | 6%    |       |
 |  73   | 9%    |  16%      | 6.5%  | 14%   |
 
-## Defense table vs. Enemy level
-| Level | Defense Anti-Crit |
+## Anti-Crit (Defense/Resilience) table vs. Enemy level
+| Level | Anti-Crit |
 | ----- | ----------------- |
 |  70   | 5.0%              |
 |  71   | 5.2%              |
