@@ -11,6 +11,15 @@ Macros does NOT take Draenei racial buffs into account.
 * Heroic Presence (1% melee hit) https://tbc.wowhead.com/spell=6562/heroic-presence
 * Inspiring Presence (1% spell hit) https://tbc.wowhead.com/spell=28878/inspiring-presence
 
+## Hit tables vs. enemy level
+| Level | Hit   | Spell Hit | Dodge | Parry |
+| ----- | ----  | --------- | ----- | ----- |
+|  70   | 5%    |   3%      | 5%    |       |
+|  71   | 5.5%  |   4%      | 5.5%  |       |
+|  72   | 6%    |   5%      | 6%    |       |
+|  73   | 9%    |  16%      | 6.5%  | 14%   |
+
+
 ## Warrior
 ### Tank Caps
 ![Warrior Tank Caps](/Classic%20TBC/img/warrior-tank-caps2.png?raw=true)
