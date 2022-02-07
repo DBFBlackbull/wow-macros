@@ -14,9 +14,9 @@ Macros does NOT take Draenei racial buffs into account.
 ## Hit tables vs. Enemy level
 | Level | Hit (Yellow/1H/2H)   | Hit (Dual-wield white) | Spell Hit | Dodge | Parry |
 | ----- | ----                 | -----------            | --------- | ----- | ----- |
-|  70   | 5%                   | 24%                    |   3%      | 5%    |       |
-|  71   | 5.5%                 | 24.5%                  |   4%      | 5.5%  |       |
-|  72   | 6%                   | 25%                    |   5%      | 6%    |       |
+|  70   | 5%                   | 24%                    |   3%      | 5%    |  5%   |
+|  71   | 5.5%                 | 24.5%                  |   4%      | 5.5%  |  5.5% |
+|  72   | 6%                   | 25%                    |   5%      | 6%    |  6%   |
 |  73   | 9%                   | 28%                    |  16%      | 6.5%  | 14%   |
 
 ## Anti-Crit (Defense/Resilience) table vs. Enemy level
