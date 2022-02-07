@@ -12,15 +12,15 @@ Macros does NOT take Draenei racial buffs into account.
 * Inspiring Presence (1% spell hit) https://tbc.wowhead.com/spell=28878/inspiring-presence
 
 ## Hit tables vs. Enemy level
-| Level | Hit   | Spell Hit | Dodge | Parry |
-| ----- | ----  | --------- | ----- | ----- |
-|  70   | 5%    |   3%      | 5%    |       |
-|  71   | 5.5%  |   4%      | 5.5%  |       |
-|  72   | 6%    |   5%      | 6%    |       |
-|  73   | 9%    |  16%      | 6.5%  | 14%   |
+| Level | Hit (Yellow/1H/2H)   | Hit (Dual-wield white) | Spell Hit | Dodge | Parry |
+| ----- | ----                 | -----------            | --------- | ----- | ----- |
+|  70   | 5%                   | 24%                    |   3%      | 5%    |       |
+|  71   | 5.5%                 | 24.5%                  |   4%      | 5.5%  |       |
+|  72   | 6%                   | 25%                    |   5%      | 6%    |       |
+|  73   | 9%                   | 28%                    |  16%      | 6.5%  | 14%   |
 
 ## Anti-Crit (Defense/Resilience) table vs. Enemy level
-| Level | Anti-Crit |
+| Level | Anti-Crit         |
 | ----- | ----------------- |
 |  70   | 5.0%              |
 |  71   | 5.2%              |
