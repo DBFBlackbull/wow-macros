@@ -5,7 +5,6 @@ Macros take talents and racials into account when calculating caps
 * Axe Specialization (5 expertise) https://tbc.wowhead.com/spell=20574/axe-specialization
 * Expertise gained from talents are automatically included
   * Defiance (Warrior Protection) https://tbc.wowhead.com/spell=12789/defiance
-  * Combat Expertise (Paladin Protection) https://tbc.wowhead.com/spell=31862/combat-expertise
 
 Macros does NOT take Draenei racial buffs into account.
 * Heroic Presence (1% melee hit) https://tbc.wowhead.com/spell=6562/heroic-presence
