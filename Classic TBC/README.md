@@ -30,6 +30,9 @@ Macros does NOT take Draenei racial buffs into account.
 
 ## Warrior
 ### Tank Caps
+```
+/run c,t,e=GetCombatRatingBonus,GetTalentInfo,GetExpertisePercent();_,_,_,_,d=t(3,3);_,_,_,_,h=t(2,17);_,_,_,_,m=t(2,14);print(format("Tank Caps\nAnti-Crit: %.2f/5.6%%\nHit: %.2f/9%%\nD: %.2f/6.5%%\nP: %.2f/14%%",floor(d*4+c(2))*.04+c(15),c(6)+h,e+m,e))
+```
 ![Warrior Tank Caps](/Classic%20TBC/img/warrior-tank-caps2.png?raw=true)
 
 Anti-Crit sums both Defense and Resilience into one, for easier readability
@@ -40,6 +43,9 @@ Reads the following talents:
 * Precision (Fury) for hit chance https://tbc.wowhead.com/spell=29592/precision
 
 ### Avoidance
+```
+/run d,p,b=GetDodgeChance(),GetParryChance(),GetBlockChance();_,_,_,_,t=GetTalentInfo(3,3);m=floor(t*4+GetCombatRatingBonus(2))*.04+5;print(format("Avoidance\nDodge: %.2f\nParry %.2f\nBlock: %.2f\nMiss: %.2f\nTotal: %.2f / 102.4",d,p,b,m,(d+p+b+m)));
+```
 ![Warrior Avoidance](/Classic%20TBC/img/warrior-avoidance.png?raw=true)
 
 Reads the following talents:
