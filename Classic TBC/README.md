@@ -53,6 +53,9 @@ Reads the following talents:
 
 ## Paladin
 ### Tank Caps
+```
+/run c,t,e=GetCombatRatingBonus,GetTalentInfo,GetExpertisePercent();_,_,_,_,d=t(2,9);_,_,_,_,h=t(2,3);print(format("TankCaps\nAntiCrit: %.2f/5.6%%\nMHit: %.2f/9%%\nSHit: %.2f/16%%\nD: %.2f/6.5%%\nP: %.2f/14%%",floor(d*4+c(2))*.04+c(15),c(6)+h,c(8)+h,e,e))
+```
 ![Paladin Avoidance](/Classic%20TBC/img/paladin-tank-caps.png?raw=true)
 
 Anti-Crit sums both Defense and Resilience into one, for easier readability
@@ -62,6 +65,9 @@ Reads the following talents:
 * Precision (Protection) https://tbc.wowhead.com/spell=20193/precision
 
 ### Avoidance
+```
+/run d,p,b=GetDodgeChance(),GetParryChance(),GetBlockChance();_,_,_,_,t=GetTalentInfo(2,9);m=floor(t*4+GetCombatRatingBonus(2))*.04+5;print(format("Avoidance\nDodge: %.2f\nParry %.2f\nBlock: %.2f\nMiss: %.2f\nTotal: %.2f / 102.4",d,p,b,m,(d+p+b+m)));
+```
 ![Paladin Avoidance](/Classic%20TBC/img/warrior-avoidance.png?raw=true)
 
 Reads the following talents:
