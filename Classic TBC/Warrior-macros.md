@@ -48,7 +48,7 @@ General version
 ```
 Sunwell Plateau version
 * Includes Sunwell Radiance (-5% miss and -20% dodge) https://tbc.wowhead.com/spell=45769/sunwell-radiance
-````
+```
 /run d,p,b=GetDodgeChance()-20,GetParryChance(),GetBlockChance();_,_,_,_,t=GetTalentInfo(3,3);m=floor(t*4+GetCombatRatingBonus(2))*.04;print(format("Avoidance\nDodge: %.2f\nParry %.2f\nBlock: %.2f\nMiss: %.2f\nTotal: %.2f / 102.4",d,p,b,m,(d+p+b+m)));
 ```
 ![Warrior Avoidance](/Classic%20TBC/img/warrior-avoidance.png?raw=true)
