@@ -14,10 +14,10 @@
 ## Mage
 ### Frost/Fire hit chance
 ```
-/run h,l,f,_,_,_,_,t=GetCombatRatingBonus(8),UnitLevel("player"),format,GetTalentInfo(3,3);s=f("\nLevel %d: %d%%",l+3,min(99,83+h+t*2));for i=l+2,l,-1 do s=format("\nLevel %d: %d%%",i,min(99,96-(i-l)+h+t*2))..s end;print("Fire/Frost hit chance:"..s);
+/run h,l,_,_,_,_,t=GetCombatRatingBonus(8),UnitLevel("player"),GetTalentInfo(3,3);s="";for i=l,min(l+5,63) do d=(i-l);d=d>2 and d+(d-2)*10 or d; s=s..format("\nLevel %d: %d%%",i,min(99,96-d+h+t*2)) end;print("Fire/Frost hit chance:"..s);
 ```
 
 ### Arcane hit chance
 ```
-/run h,l,f,_,_,_,_,t=GetCombatRatingBonus(8),UnitLevel("player"),format,GetTalentInfo(1,2);s=f("\nLevel %d: %d%%",l+3,min(99,83+h+t*2));for i=l+2,l,-1 do s=format("\nLevel %d: %d%%",i,min(99,96-(i-l)+h+t*2))..s end;print("Fire/Frost hit chance:"..s);
+/run h,l,_,_,_,_,t=GetCombatRatingBonus(8),UnitLevel("player"),GetTalentInfo(1,2);s="";for i=l,min(l+5,63) do d=(i-l);d=d>2 and d+(d-2)*10 or d; s=s..format("\nLevel %d: %d%%",i,min(99,96-d+h+t*2)) end;print("Fire/Frost hit chance:"..s);
 ```
