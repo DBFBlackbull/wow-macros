@@ -3,7 +3,7 @@ Here are some general macros that many people can use
 
 ### Spammable Start Auto-attack macro
 ```
-if not IsCurrentAction(40) then UseAction(40);end;
+/script if not IsCurrentAction(40) then UseAction(40);end;
 ```
 ### Spammable Start Shoot wand macro
 ```
