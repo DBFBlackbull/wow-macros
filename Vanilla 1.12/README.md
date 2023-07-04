@@ -1,6 +1,24 @@
 # Welcome to Vanilla 1.12 macros
 Here are some general macros that many people can use
 
+### Unlock and Lock player frame
+Unlock
+```
+/script PlayerFrame:SetMovable(1)PlayerFrame:StartMoving()
+```
+Lock 
+```
+/script PlayerFrame:StopMovingOrSizing()PlayerFrame:SetMovable()
+```
+
+### Unlock and Lock target frame
+```
+/script TargetFrame:SetMovable(1)TargetFrame:StartMoving()
+```
+```
+/script TargetFrame:StopMovingOrSizing()TargetFrame:SetMovable()
+```
+
 ### Spammable Start Auto-attack macro
 ```
 /script if not IsCurrentAction(40) then UseAction(40);end;
