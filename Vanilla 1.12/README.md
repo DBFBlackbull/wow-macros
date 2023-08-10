@@ -19,6 +19,11 @@ Lock
 /script TargetFrame:StopMovingOrSizing()TargetFrame:SetMovable()
 ```
 
+### Camera distance further to max
+```
+/console CameraDistanceMaxFactor 5
+```
+
 ### Spammable Start Auto-attack macro
 ```
 /script if not IsCurrentAction(40) then UseAction(40);end;
