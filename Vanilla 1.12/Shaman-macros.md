@@ -11,7 +11,7 @@ Here are some helpful macros for Shamans
 
 ### Cast sequence for totems depending on group. First sequence is for solo, second is for groups
 ```
-/run m,s="Mana Spring Totem","Strength of Earth Totem" t={m,s} if GetNumPartyMembers()>0 then t={"Windfury Totem","Frost Resistance Totem",s} end if q==nil or q>getn(t) then q=1 end if GetSpellCooldown(57,0)==0 then CastSpellByName(t[q]) q=q+1 end
+/run m,s="Mana Spring Totem","Strength of Earth Totem" t={m,s} if GetNumPartyMembers()>0 then t={"Windfury Totem",m,s} end if q==nil or q>getn(t) then q=1 end if GetSpellCooldown(57,0)==0 then CastSpellByName(t[q]) q=q+1 end
 ```
 When going solo this example this macro casts Mana Spring -> Searing Totem -> Strength of Earth
 
