@@ -1,3 +1,6 @@
+Native mouseover macros for 1.12 (only for healing/buffs. Abilities vs enemies, such as blind still require a target change)
+https://github.com/GitGurky/Vanilla-Macros/blob/master/General/Mouseover.md
+
 Vanilla wow macros by Meridaw - Super good collection:
 https://github.com/Meridaw/Vanilla-Macros
 
