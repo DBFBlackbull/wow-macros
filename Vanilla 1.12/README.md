@@ -1,22 +1,10 @@
 # Welcome to Vanilla 1.12 macros
 Here are some general macros that many people can use
 
-### Unlock and Lock player frame
-Unlock
+### Set Player and Target frame to coordinates
 ```
-/script PlayerFrame:SetMovable(1)PlayerFrame:StartMoving()
-```
-Lock 
-```
-/script PlayerFrame:StopMovingOrSizing()PlayerFrame:SetMovable()
-```
-
-### Unlock and Lock target frame
-```
-/script TargetFrame:SetMovable(1)TargetFrame:StartMoving()
-```
-```
-/script TargetFrame:StopMovingOrSizing()TargetFrame:SetMovable()
+/run PlayerFrame:ClearAllPoints() PlayerFrame:SetPoint("CENTER",UIParent,-150,-140)PlayerFrame:SetUserPlaced(true)
+/run TargetFrame:ClearAllPoints() TargetFrame:SetPoint("CENTER",UIParent,150,-140)TargetFrame:SetUserPlaced(true)
 ```
 
 ### Camera distance further to max
