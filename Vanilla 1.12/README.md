@@ -12,6 +12,11 @@ Here are some general macros that many people can use
 /console CameraDistanceMaxFactor 5
 ```
 
+### Reset instance
+```
+/script ResetInstances()
+```
+
 ### Spammable Start Auto-attack macro
 ```
 /script if not IsCurrentAction(40) then UseAction(40);end;
