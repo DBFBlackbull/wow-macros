@@ -30,3 +30,8 @@ When in a group this example this macro casts Windfury -> Strength of Earth -> M
 ```
 /run i,b,p,c,u=1,0,"player",CastSpellByName,UnitBuff;while u(p,i) do if strfind(u(p,i),"SkinofEarth") then b=1 end i=i+1 end if b<1 then c("Earth Shield") end CastSpellByName("Rocky Bash")
 ```
+
+### Ghost Wolf in combat, mount outside of combat
+```
+/run if UnitAffectingCombat("player") then CastSpellByName("Ghost Wolf") end for i=1,16 do t=GetContainerItemLink(0,i) if t then if string.find(t,"Horn of the Timber Wolf") then UseContainerItem(0,i) end end end
+```
