@@ -31,7 +31,9 @@ When in a group this example this macro casts Windfury -> Strength of Earth -> M
 /run i,b,p,c,u=1,0,"player",CastSpellByName,UnitBuff;while u(p,i) do if strfind(u(p,i),"SkinofEarth") then b=1 end i=i+1 end if b<1 then c("Earth Shield") end CastSpellByName("Rocky Bash")
 ```
 
-### Ghost Wolf in combat, mount outside of combat
+### Ghost Wolf in combat or if you are carrying the PVP flag in WSG. Otherwise it uses mount.
+**Requirements:**
+* Replace "Timber Wolf" with the name of your mount. Your mount must be placed in bag 0, i.e. the backpack.
 ```
-/run if UnitAffectingCombat("player") then CastSpellByName("Ghost Wolf") end for i=1,16 do t=GetContainerItemLink(0,i) if t then if string.find(t,"Horn of the Timber Wolf") then UseContainerItem(0,i) end end end
+/run f,p,g,m=string.find,"player",UnitAffectingCombat(p)for i=1,40 do t,b=GetContainerItemLink(0,i),UnitBuff(p,i)if t and f(t,"Timber Wolf") then m=i end g = g or b and f(b,"bannerpvp") end if g then CastSpellByName("Ghost Wolf") end UseContainerItem(0,m)
 ```
