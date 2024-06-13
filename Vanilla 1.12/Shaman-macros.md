@@ -35,5 +35,5 @@ When in a group this example this macro casts Windfury -> Strength of Earth -> M
 **Requirements:**
 * Replace "Timber Wolf" with the name of your mount. Your mount must be placed in bag 0, i.e. the backpack.
 ```
-/run f,p,g,m=string.find,"player",UnitAffectingCombat(p)for i=1,40 do t,b=GetContainerItemLink(0,i),UnitBuff(p,i)if t and f(t,"Timber Wolf") then m=i end g = g or b and f(b,"bannerpvp") end if g then CastSpellByName("Ghost Wolf") end UseContainerItem(0,m)
+/run f,p,m=string.find,"player"g=UnitAffectingCombat(p)for i=1,40 do t,b=GetContainerItemLink(0,i),UnitBuff(p,i)if t and f(t,"Timber Wolf") then m=i end g=g or b and f(b,"BannerPVP") end if g then CastSpellByName("Ghost Wolf") end UseContainerItem(0,m)
 ```
