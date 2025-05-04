@@ -36,14 +36,9 @@ When in a group this example this macro casts Windfury -> Strength of Earth -> M
 /run i,b,p,c,u=1,0,"player",CastSpellByName,UnitBuff;while u(p,i) do if strfind(u(p,i),"SkinofEarth") then b=1 end i=i+1 end if b<1 then c("Earth Shield") end CastSpellByName("Rocky Bash")
 ```
 
-### Ghost Wolf in combat or if you are carrying the PVP flag in WSG. Otherwise it uses mount.
+### Ghost Wolf in combat or if you are carrying the PVP flag in WSG or the Silithyst in Silithus. Otherwise it uses mount.
 **Requirements:**
 * Replace "Timber Wolf" with the name of your mount. Your mount must be placed in bag 0, i.e. the backpack.
 ```
-/run f,p,m=string.find,"player"g=UnitAffectingCombat(p)for i=1,40 do t,b=GetContainerItemLink(0,i),UnitBuff(p,i)if t and f(t,"Timber Wolf") then m=i end g=g or b and f(b,"BannerPVP") end if g then CastSpellByName("Ghost Wolf") end UseContainerItem(0,m)
-```
-
-testing
-```
-/run p="player"f=string.find for i=1,40do t=GetContainerItemLink(0,i)or"" b=UnitBuff(p,i)or"" m=f(t,"Timber Wolf")and i or m g=UnitAffectingCombat(p)or f(b,"BannerPVP")or f(b,"SpiceCloud")end g and CastSpellByName("Ghost Wolf")or UseContainerItem(0,m)
+/run p="player"g=UnitAffectingCombat(p)f=string.find for i=1,40do b=UnitBuff(p,i)or""g=g or f(b,"BannerPVP")or f(b,"SpiceCloud")m=f(GetContainerItemLink(0,i)or"","Timber Wolf")and i or m end if g then CastSpellByName("Ghost Wolf")end UseContainerItem(0,m)
 ```
