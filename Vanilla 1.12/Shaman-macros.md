@@ -42,3 +42,8 @@ When in a group this example this macro casts Windfury -> Strength of Earth -> M
 ```
 /run f,p,m=string.find,"player"g=UnitAffectingCombat(p)for i=1,40 do t,b=GetContainerItemLink(0,i),UnitBuff(p,i)if t and f(t,"Timber Wolf") then m=i end g=g or b and f(b,"BannerPVP") end if g then CastSpellByName("Ghost Wolf") end UseContainerItem(0,m)
 ```
+
+testing
+```
+/run p="player"f=string.find for i=1,40do t=GetContainerItemLink(0,i)or"" b=UnitBuff(p,i)or"" m=f(t,"Timber Wolf")and i or m g=UnitAffectingCombat(p)or f(b,"BannerPVP")or f(b,"SpiceCloud")end g and CastSpellByName("Ghost Wolf")or UseContainerItem(0,m)
+```
