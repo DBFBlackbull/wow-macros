@@ -38,7 +38,7 @@ When in a group this example this macro casts Windfury -> Strength of Earth -> M
 
 ### Ghost Wolf in combat or if you are carrying the PVP flag in WSG or the Silithyst in Silithus. Otherwise it uses mount.
 **Requirements:**
-* Replace "Timber Wolf" with the name of your mount. Your mount must be placed in bag 0, i.e. the backpack.
+* Replace "War Wolf" with the name of your mount. Your mount must be placed in bag 0, i.e. the backpack.
 ```
-/run p="player"g=UnitAffectingCombat(p)f=string.find for i=1,40do b=UnitBuff(p,i)or""g=g or f(b,"BannerPVP")or f(b,"SpiceCloud")m=f(GetContainerItemLink(0,i)or"","Timber Wolf")and i or m end if g then CastSpellByName("Ghost Wolf")end UseContainerItem(0,m)
+/run p="player"g=UnitAffectingCombat(p)f=string.find for i=1,40do b=UnitBuff(p,i)or""g=g or f(b,"BannerPVP")or f(b,"SpiceCloud")m=f(GetContainerItemLink(0,i)or"","War Wolf")and i or m end if g then CastSpellByName("Ghost Wolf")end UseContainerItem(0,m)
 ```
