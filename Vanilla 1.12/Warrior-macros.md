@@ -17,28 +17,27 @@ Here the first number `4` is the bag / container to look for, where the bag furt
 ## Basics
 Whenever you see the following code:
 ```
-if not IsCurrentAction(40) then UseAction(40);end;
+if not PlayerFrame.inCombat then AttackTarget() end
 ```
-All you have to think is `/startattack`. By placing my auto attack "spell" on actionbar slot `40`, the above code ensures that my auto attack starts. You can change what slot you want it on and just change the number `40` to the slot you picked
+All you have to think is `/startattack`.
 
 ## Auto attack + Ability
-All these macros have the **requirement** that `Autoattack` must be on actionbar slot `40`
 
 ### Start auto attack and try to use Heroic Strike
 ```
-/script if not IsCurrentAction(40) then UseAction(40);end; CastSpellByName("Heroic Strike");
+/script if not PlayerFrame.inCombat then AttackTarget() end CastSpellByName("Heroic Strike")
 ```
 ### Start auto attack and try to use Cleave
 ```
-/script if not IsCurrentAction(40) then UseAction(40);end; CastSpellByName("Cleave");
+/script if not PlayerFrame.inCombat then AttackTarget() end CastSpellByName("Cleave")
 ```
 ### Start auto attack and try to use Whirlwind
 ```
-/script if not IsCurrentAction(40) then UseAction(40);end; CastSpellByName("Whirlwind");
+/script if not PlayerFrame.inCombat then AttackTarget() end CastSpellByName("Whirlwind")
 ```
 ### Start auto attack and try to use Revenge and Sunder Armor
 ```
-/script if not IsCurrentAction(40) then UseAction(40); end; CastSpellByName("Revenge");  CastSpellByName("Sunder Armor");
+/script if not PlayerFrame.inCombat then AttackTarget() end CastSpellByName("Revenge"); CastSpellByName("Sunder Armor")
 ```
 ## Combining abilities
 ### Use Bloodrage and top trinket slot
@@ -49,7 +48,7 @@ All these macros have the **requirement** that `Autoattack` must be on actionbar
 **Requirement:**
 - `IsEquippedAction(30)`: Shield must be on actionbar slot `30`
 ```
-/run local inCombat=UnitAffectingCombat("player");if not IsCurrentAction(40) then UseAction(40);end; CastSpellByName("Charge"); if inCombat and IsEquippedAction(30) then CastSpellByName("Defensive Stance");end;
+/run local inCombat=UnitAffectingCombat("player") if not PlayerFrame.inCombat then AttackTarget() end CastSpellByName("Charge"); if inCombat and IsEquippedAction(30) then CastSpellByName("Defensive Stance") end
 ```
 ### Battle Stance + Overpower
 If you are **not in Battle Stance**, switch to Battle Stance. Then use Overpower
