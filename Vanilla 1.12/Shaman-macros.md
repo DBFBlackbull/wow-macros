@@ -18,15 +18,13 @@ When going solo this example this macro casts Mana Spring -> Searing Totem -> St
 When in a group this example this macro casts Windfury -> Strength of Earth -> Mana Spring
 
 ### Cast Windfury Weapon enchant if remaining time is less than 20 seconds, else cast Stormstrike. Always Start auto attack
-**Requirements:**
-* `IsCurrentAction(41) / UseAction(41)`: Auto attack spell must be placed on actionbar slot `41`
 ```
-/script e,t=GetWeaponEnchantInfo(); if e and t>20*1000 then CastSpellByName("Stormstrike"); else CastSpellByName("Windfury Weapon"); end; if not IsCurrentAction(41) then UseAction(41);end;
+/script e,t=GetWeaponEnchantInfo(); if e and t>20*1000 then CastSpellByName("Stormstrike") else CastSpellByName("Windfury Weapon") end if not PlayerFrame.inCombat then AttackTarget() end
 ```
 
 ### In combat: Always cast Lightning Shield. Outside of combat: Cast Windfury Weapon if duration is less than 3 mins, else cast Lightning Shield
 ```
-/script e,t=GetWeaponEnchantInfo(); if UnitAffectingCombat("player") or e and t>3*60000 then CastSpellByName("Lightning Shield"); else CastSpellByName("Windfury Weapon"); end;
+/script e,t=GetWeaponEnchantInfo(); if UnitAffectingCombat("player") or e and t>3*60000 then CastSpellByName("Lightning Shield") else CastSpellByName("Windfury Weapon") end
 ```
 
 ### Cast a buff if missing, else cast a spell
