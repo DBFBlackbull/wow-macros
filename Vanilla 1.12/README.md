@@ -6,8 +6,8 @@ Here are some general macros that many people can use
 /run SetCVar("uiScale", 0.8)
 /run PlayerFrame:ClearAllPoints() PlayerFrame:SetPoint("CENTER",UIParent,-190,-190)PlayerFrame:SetUserPlaced(true)
 /run TargetFrame:ClearAllPoints() TargetFrame:SetPoint("CENTER",UIParent,190,-190)TargetFrame:SetUserPlaced(true)
-/run if Abar_Frame then Abar_Frame:ClearAllPoints() Abar_Frame:SetPoint("CENTER",UIParent,-180,-160) end
-/run if ebar_Frame then ebar_Frame:ClearAllPoints() ebar_Frame:SetPoint("CENTER",UIParent,180,-160) end
+/run if Abar_Frame then Abar_Frame:ClearAllPoints() Abar_Frame:SetPoint("CENTER",UIParent,-180,-160) Abar_Frame:SetUserPlaced(true) end
+/run if ebar_Frame then ebar_Frame:ClearAllPoints() ebar_Frame:SetPoint("CENTER",UIParent,180,-160) ebar_Frame:SetUserPlaced(true) end
 ```
 
 ### Camera distance further to max
