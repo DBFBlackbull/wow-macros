@@ -1,10 +1,13 @@
 # Welcome to Vanilla 1.12 macros
 Here are some general macros that many people can use
 
-### Set Player and Target frame to coordinates
+### Default UI Setup
 ```
-/run PlayerFrame:ClearAllPoints() PlayerFrame:SetPoint("CENTER",UIParent,-150,-140)PlayerFrame:SetUserPlaced(true)
-/run TargetFrame:ClearAllPoints() TargetFrame:SetPoint("CENTER",UIParent,150,-140)TargetFrame:SetUserPlaced(true)
+/run SetCVar("uiScale", 0.8)
+/run PlayerFrame:ClearAllPoints() PlayerFrame:SetPoint("CENTER",UIParent,-190,-190)PlayerFrame:SetUserPlaced(true)
+/run TargetFrame:ClearAllPoints() TargetFrame:SetPoint("CENTER",UIParent,190,-190)TargetFrame:SetUserPlaced(true)
+/run if Abar_Frame then Abar_Frame:ClearAllPoints() Abar_Frame:SetPoint("CENTER",UIParent,-180,-160) end
+/run if ebar_Frame then ebar_Frame:ClearAllPoints() ebar_Frame:SetPoint("CENTER",UIParent,180,-160) end
 ```
 
 ### Camera distance further to max
